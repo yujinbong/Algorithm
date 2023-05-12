@@ -4,14 +4,15 @@ class Solution {
         Arrays.sort(strs);
         String s1 = strs[0];
         String s2 = strs[strs.length-1];
-        int idx = 0;
-        while(idx < s1.length() && idx < s2.length()){
-            if(s1.charAt(idx) == s2.charAt(idx)){
-                idx++;
+        int index = 0;
+        while(index < s1.length() && index < s2.length()){
+            if(s1.charAt(index) == s2.charAt(index)){
+                index++;
             } else {
+                
                 break;
             }
         }
-        return s1.substring(0, idx);
+        return s1.substring(0, index);
     }
 }
