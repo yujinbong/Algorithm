@@ -1,14 +1,17 @@
-class Solution {
-    
-    public boolean isPalindrome(int x) {
-        
-        String s = String.valueOf(x); // String
-        int n = s.length(); 
+/*Given an integer x, return true if x is a palindrome, and false otherwise.
+* */
 
-        for (int i=0; i<n/2; i++) {
-            if (s.charAt(i) != s.charAt(n-i-1)) 
+public class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) //nagative num
             return false;
+        int temp = 0;
+        while (x > temp) { //positive num
+            temp = temp * 10 + x % 10;
+            x = x / 10;
         }
-        return true;
+
+        return (x == temp || x == temp / 10);
     }
+
 }
